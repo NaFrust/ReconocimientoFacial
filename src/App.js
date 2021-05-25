@@ -73,14 +73,14 @@ class App extends React.Component {
 
   onButtonSubmit = () => {
     this.setState({imgUrl: this.state.input});
-      fetch('http://localhost:3000/imageurl',{
+      fetch('https://pacific-plains-07601.herokuapp.com/imageurl',{
         method: 'post',
           headers: {'content-type': 'application/json'},
           body: JSON.stringify({input: this.state.input})
           }).then(response => response.json())
     .then((response) => {
       if(response){
-        fetch('http://localhost:3000/image',{
+        fetch('https://pacific-plains-07601.herokuapp.com/image',{
           method: 'put',
             headers: {'content-type': 'application/json'},
             body: JSON.stringify({
